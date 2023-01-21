@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% include "basehead.html" %}
+    {% block head %}
+    <meta name="description" content="base content"/>
+    {% endblock %}
+    {% block defaultStyles %}
+    <link rel="stylesheet" href="/css/global.css" />
+    {% endblock %}
+    {% block customStyles %}
+    {% endblock %}
+    <title>{{title}}</title>
+  </head>
+  <body>
+    <header>
+      <a href="/" style="pull-left">
+        <img src="/assets/images/favicon.png" style="height:100px;"/>
+      </a>
+      <div style="margin: auto 15px">
+        <h3>{{title}}</h3>
+      </div>
+    </div>
+    </header>
+    {{ content | safe }}
+
+    <footer>
+      <a href="/contact">Contact us</a>
+    </footer>
+  </body>
+</html>
