@@ -14,18 +14,19 @@
   </head>
   <body>
     <header>
-      <a href="/" style="pull-left">
-        <img src="/assets/images/favicon.png" style="height:100px;"/>
+      <a href="/" style="float:left" title="Velox Mundi Home">
+        <img src="/assets/images/favicon.png" height="60px"/>
       </a>
-      <div style="margin: auto 15px">
-        <h3>{{title}}</h3>
-      </div>
-    </div>
     </header>
-    {{ content | safe }}
-
+    <div id="content">
+      <div style="text-align: center; margin: auto 15px 15px 15px">
+        <h1>{{title}}</h1>
+      </div>
+      {{ content | safe }}
+    </div>
     <footer>
       <a href="/contact">Contact us</a>
+      <a href="/about">About</a>
     </footer>
   </body>
 </html>
