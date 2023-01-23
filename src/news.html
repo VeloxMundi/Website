@@ -1,0 +1,10 @@
+---
+layout: layouts/base.html
+title: New York Times News
+---
+
+<ul>
+{% for story in topStories.response.docs %}
+  <li><a href="{{story.web_url}}" target="_blank" rel="noopener noreferrer">{{story.headline.main}}</a></li>
+{% endfor %}
+</ul>
