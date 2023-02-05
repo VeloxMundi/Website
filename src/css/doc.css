@@ -1,0 +1,13 @@
+.doc__content {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.doc__prevnext {
+  padding:5px;
+}
+.doc__prevnext:hover {
+  background-color:rgb( 64, 176, 191);
+  color: white;
+  border-radius: 5px;
+}

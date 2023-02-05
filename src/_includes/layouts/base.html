@@ -14,19 +14,24 @@
   </head>
   <body>
     <header>
-      <a href="/" style="float:left" title="Velox Mundi Home">
-        <img src="/assets/images/favicon.png" height="60px"/>
-      </a>
+    <a href="/" style="position: absolute; top:5px; left:10px;" title="Velox Mundi Home">
+      <img src="/assets/images/favicon.png" height="60px"/>
+    </a>
+    {% block title %}
+    <div id="title">
+      <h2>{{ title }}</h2>
+      <h4>{{ subtitle }}</h4>
+    </div>
+    {% endblock %}
     </header>
     <div id="content">
-      <div style="text-align: center; margin: auto 15px 15px 15px">
-        <h1>{{title}}</h1>
-      </div>
+    {% block content %}
       {{ content | safe }}
+    {% endblock %}
     </div>
     <footer>
-      <a href="/contact">Contact us</a>
       <a href="/">Home</a>
+      <a href="/docs/">Documentation</a>
       <a href="/about">About</a>
     </footer>
   </body>

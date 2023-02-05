@@ -1,17 +1,17 @@
 [
   {
     "title": "Card 1 Title",
-    "link": "/concact",
+    "link": "/contact",
     "linkText": "Contact 1"
   },
   {
     "title": "Card 2 Title",
-    "link": "/concact",
+    "link": "/contact",
     "linkText": "Contact 2"
   },
   {
     "title": "Card 3 Title",
-    "link": "/concact",
+    "link": "/contact",
     "linkText": "Contact 3"
   }
 ]

@@ -1,0 +1,40 @@
+{% extends "layouts/blog.html" %}
+{% set previousPost = (collections.posts | reverse) | getPreviousCollectionItem(page) %}
+{% set nextPost = (collections.posts | reverse) | getNextCollectionItem(page) %}
+
+{% block head %}
+<meta name="description" content="{{description}}"/>
+<link rel="stylesheet" href="/css/post.css"/>
+{% endblock %}
+
+{% block content %}
+  <div class="post__header" style="text-align: center;">
+    <h2><a href="{{'/blog/' | url }}">Blog</a> / {{ title }}</h2>
+    <div>{{ author }}</div>
+    <p style="font-size:.8em">{{date | dateFilter("hh:mm a") }} {{ date | dateFilter("dddd, MMMM D, Y") }}</p>
+  </div>
+  <p>&nbsp;</p>
+  <div class="post__taglist">
+    <b>Tags:</b>
+  {% for tag in tags %}
+    <p><a href="{{ '/blog/tag/' + (tag | slugify) | url }}">{{ tag }}</a></p>
+  {% endfor %}
+  </div>
+  <article id="content" class="post__content">
+    {{ content | safe }}
+  </article>
+  <div id="post__prevnext_parent">
+    
+    {% if previousPost %}
+    <div class="post__prevnext">
+      <a href="{{ previousPost.url }}">&laquo;&nbsp;{{ previousPost.data.title }}</a>
+    </div>
+    {% endif %}
+    {% if nextPost %}
+    <div class="post__prevnext">
+      <a href="{{ nextPost.url }}">{{ nextPost.data.title }}&raquo;</a>
+    </div>
+    {% endif %}
+
+  </div>
+{% endblock %}

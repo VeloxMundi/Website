@@ -1,0 +1,24 @@
+---
+layout: layouts/doc.html
+title: Table of Contents
+sortOrder: 0.0.0
+status: hidden
+
+---
+
+<table>
+{% for doc in collections.docs %}
+  <tr>
+  {% if page.url != doc.url %}
+  <td style="text-align: right;">
+    {% if doc.data.sortOrder!='0.0.0' %}
+    {{doc.data.sortOrder}}
+    {% endif %}
+  </td>
+  <td>
+    <a href="{{doc.url}}">{{ doc.data.title }}</a>
+  </td>
+  {% endif %}
+  </tr>
+{% endfor %}
+</table>

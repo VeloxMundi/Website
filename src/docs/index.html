@@ -1,0 +1,19 @@
+---
+layout: layouts/doc.html
+title: Home
+status: published
+sortOrder: 0.0.0
+---
+
+<p>Welcome to the <i>Velox Mundi Desktop</i> documentation. The application is currently in pre-development, and the documentation is not being maintained carefully at this point. Some of the information in these pages may be incomplete or inaccurate. These pages are intended to be placeholders while the application is under development, and will be completed prior to releasing the first public release.</p>
+
+<p>&nbsp;</p>
+<p><b>Documentation Major Section Links:</b></p>
+
+{% for doc in collections.docs %}
+{% if doc.data.topicEnd=='0.0' %}
+{% if page.url != doc.url %}
+<p><a href="{{doc.url}}">{{ doc.data.title }}</a></p>
+{% endif %}
+{% endif %}
+{% endfor %}

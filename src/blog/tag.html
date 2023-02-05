@@ -1,0 +1,21 @@
+---
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+  addAllPagesToCollections: true
+layout: layouts/blog.html
+permalink: /blog/tag/{{ tag | slugify }}/index.html
+eleventyComputed: 
+  title: Posts Tagged With {{ tag }}
+---
+
+<div class="post__header" style="text-align: center;">
+  <h2>Posts tagged with "{{ tag }}"</h2>
+</div>
+
+<ul>
+{% for post in collections[tag] %}
+  <li><a href="{{ post.url }}">{{ post.data.title }}</a></li>
+{% endfor %}
+</ul>

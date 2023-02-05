@@ -1,0 +1,51 @@
+{% extends "layouts/base.html" %}
+{% set previousPost = collections.docs | getPreviousCollectionItem(page) %}
+{% set nextPost = collections.docs | getNextCollectionItem(page) %}
+
+{% block head %}
+<meta name="description" content="{{description}}"/>
+<link rel="stylesheet" href="/css/doc.css"/>
+{% endblock %}
+
+{% block title %}
+<div id="title" style="text-align: center; margin: auto 15px 15px 15px">
+  <h3><a href="{{ '/docs/index.html' | url}}">Docs</a> / {{ title }}</h3>
+  {% if sortOrder!='0.0.0' %}
+  <p>Page: {{ sortOrder }}</p>
+  {% endif %}
+</div>
+{% endblock %}
+
+{% block content %}
+<!--
+    Topic: {{ topicNum }}
+    CurrentLevel: {{ currentLevel }}
+    topicEnd: {{ topicEnd }}
+-->
+  <p>&nbsp;</p>
+  <article id="content" class="doc__content">
+    {{ content | safe }}
+  </article>
+  
+  <p>&nbsp;</p>
+  <table style="width: 100%;" class="doc__content">
+    <tr>
+      <td style="width:50%;text-align:center;">
+      {% if previousPost %}
+        <a href="{{ previousPost.url }}" class="doc__prevnext">&laquo;&nbsp;{{ previousPost.data.title }}</a>
+      {% endif %}
+      </td>
+      <td style="width:50%; text-align:center;">
+      {% if nextPost %}
+        <a href="{{ nextPost.url }}" class="doc__prevnext">{{ nextPost.data.title }}&raquo;</a>
+      {% endif %}
+      </td>
+    </tr>
+  </table>
+  {% if title != 'Table of Contents' %}
+  <div style="text-align:center;">
+    <hr/>
+    <a href="{{ '/docs/toc' | url }}" title="Table of Contents">Table of Contents</a>
+  </div>
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,29 @@
+---
+layout: layouts/blog.html
+title: Blog
+pagination:
+  data: collections.posts
+  size: 3
+  reverse: true
+---
+
+<div class="post__header" style="text-align: center;">
+  <h2>Blog</h2>
+</div>
+
+<ul>
+  {% for item in pagination.items %}
+  <li><a href="{{ item.url }}">{{ item.data.title }} ({{ item.data.date | dateFilter("M/D/Y") }})</a></li>
+  {% endfor %}
+
+</ul>
+
+<div>
+  Page: 
+  {% for pageEntry in pagination.pages %}
+  {% if page.url == pagination.hrefs[ loop.index0 ] %} <span class="blog__post__current" aria-current="page">{{ loop.index }}</span>
+  {% else %}
+    <a href="{{ pagination.hrefs[ loop.index0 ] }}">{{ loop.index }}</a>&nbsp;
+  {% endif %}
+{% endfor %}
+</div>
