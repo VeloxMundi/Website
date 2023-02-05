@@ -6,7 +6,7 @@ sortOrder: 1.0.0
 status: published
 ---
 
-Although _Velox Mundi Desktop_ will eventually support Windows, Linux, and Mac operating systems, for now, we only support installing on a Windows.
+Although _Velox Mundi Desktop_ will eventually support Windows, Linux, and Mac operating systems, for now, we only support installing on a computer running Windows.
 
 {% for doc in collections.docs %}
 {% if doc.data.currentLevel==currentLevel %}
