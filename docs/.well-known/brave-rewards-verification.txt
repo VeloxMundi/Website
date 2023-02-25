@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: veloxmundi.com
+Token: 728523f9ee8de312e8bdbb7c807afb257dd4f375412b7ea0d28156b8c6b7a423
