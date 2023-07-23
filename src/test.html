@@ -1,10 +1,63 @@
----
-layout: layouts/base.html
-title: Test
----
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			html, body {
+				height: 100%;
+				overflow: auto;
+				margin: 0px;
+			}
+			body {
+				height:95%;
+				overflow: auto;
+				/*
+				box-shadow: 0 10px 150px rgba(0,0,0,1);border: 10px solid #000000;
+				border-width: 10px 10px 10px 10px;*/
+				border: #000000 10px solid;
+				border-radius: 8px;
 
-<div class="home-card__container">
-	{% for card in cards %}		
+				background-image: linear-gradient(to top, black, black, black, ghostwhite 250px);
+				background-repeat:no-repeat;
+				padding: 10px;
+				margin: 0px;
+			}
+			/*
+			#div-bottom {
+				z-index: -10;
+				position: absolute;
+				height: 100%;
+				width: 100%;
+				overflow: auto;
+				background-image: linear-gradient(to top, black, black, black, white 250px);
+			}
+			#div-top {
+				z-index: -10;
+				position: absolute;
+				height: 100%;
+				width: 100%;
+				background-image: linear-gradient(to bottom, white, black, 100px);
+			}
+			#div-right {
+				z-index: -10;
+				position: absolute;
+				height: 100%;
+				width: 100%;
+				background-image: linear-gradient(to left, black, white, 100px);
+			}
+			*/
+
+		</style>
+	</head>
+	<body>
+		<h1>My page</h1>
+		<p>It has text and <a href="#">links</a></p>
+	</body>
+</html>
+
+<!--
+	<div class="home-card__container">
+	{% for card in cards %}
 		{% Card title=card.title, link=card.link, linkText=card.linkText %}
 	{% endfor %}
 </div>
+-->

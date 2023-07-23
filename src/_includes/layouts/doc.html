@@ -8,7 +8,7 @@
 {% endblock %}
 
 {% block title %}
-<div id="title" style="text-align: center; margin: auto 15px 15px 15px">
+<div id="title">
   <h3><a href="{{ '/docs/index.html' | url}}">Docs</a> / {{ title }}</h3>
   {% if sortOrder!='0.0.0' %}
   <p>Page: {{ sortOrder }}</p>
@@ -23,7 +23,7 @@
     topicEnd: {{ topicEnd }}
 -->
   <p>&nbsp;</p>
-  <article id="content" class="doc__content">
+  <article id="article" class="doc__content">
     {{ content | safe }}
   </article>
   

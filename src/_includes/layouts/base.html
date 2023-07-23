@@ -13,26 +13,28 @@
     <title>{{title}}</title>
   </head>
   <body>
-    <header>
-    <a href="/" style="position: absolute; top:5px; left:10px;" title="Velox Mundi Home">
-      <img src="/assets/images/favicon.png" height="60px"/>
-    </a>
-    {% block title %}
-    <div id="title">
-      <h2>{{ title }}</h2>
-      <h4>{{ subtitle }}</h4>
-    </div>
-    {% endblock %}
-    </header>
     <div id="content">
-    {% block content %}
-      {{ content | safe }}
-    {% endblock %}
+      <header>
+      <a href="/" style="position: absolute; top:5px; left:10px;" title="Velox Mundi Home">
+        <img src="/assets/images/favicon.png" height="60px"/>
+      </a>
+      {% block title %}
+      <div id="title">
+        <h2>{{ title }}</h2>
+        <h4>{{ subtitle }}</h4>
+      </div>
+      {% endblock %}
+      </header>
+      <div id="main">
+      {% block content %}
+        {{ content | safe }}
+      {% endblock %}
+      </div>
+      <footer>
+        <a href="/">Home</a>
+        <a href="/docs/">Documentation</a>
+        <a href="/about">About</a>
+      </footer>
     </div>
-    <footer>
-      <a href="/">Home</a>
-      <a href="/docs/">Documentation</a>
-      <a href="/about">About</a>
-    </footer>
   </body>
 </html>
